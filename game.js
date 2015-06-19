@@ -41,6 +41,20 @@ var drawCheckerboard = function () {
 	}
 };
 
+//moves a square across the screen
+var cat = function () {
+	for (var i = 0; i < 640; i++) {
+	//draws a square
+	drawSquare(10, i, 10, 'white')
+	//there should be a delay in here or something
+	
+	//clear the square
+	ctx.clearRect(i, 10, 10, 10);
+	//replace the black background
+	drawSquare(10,i,10, 'black');
+	return true;
+	}
+};
 
 var help = function () {
 	console.log('this is a thingy about things');
