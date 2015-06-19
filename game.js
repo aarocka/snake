@@ -39,7 +39,7 @@ var drawCheckerboard = function () {
 			fourSq(x,y);
 		}
 	}
-}
+};
 
 
 var help = function(){
