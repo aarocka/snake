@@ -24,7 +24,7 @@ function drawBackground(){
 	ctx.fill();
 };
 */
-
+//JS Y U NO WORK!!!
 
 //set's up the player
 var player = {
@@ -40,9 +40,9 @@ var player = {
 		ctx.fill();
 	}
 };
+
 function draw(){
 	ctx.clearRect(0,0,canvas.width,canvas.height);
-	ctx.fillRect(0, 0, 640, 480);
 	player.draw();
 	player.x += player.vx;
 	player.y += player.vy;
