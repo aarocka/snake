@@ -1,63 +1,52 @@
 var canvas = document.getElementById("game");
 var ctx = canvas.getContext("2d");
 
-//draw the background
-var background = ctx;
-background.rect(0, 0, 640, 480);
-background.fill();
+//draws a black background
 
-//draw a square
-var drawSquare = function (size, posX, posY, color) {
-	var rect = ctx;
-	rect.fillStyle = color;
-	rect.fillRect(posX, posY, size, size);
-	return true;
+//draws a black background
+function drawBackground(){
+	ctx.fillStyle = '#000'
+	ctx.fillRect(0,0,canvas.width,canvas.height);
 };
 
-var drawCheckerboard = function () {
-	var fourSq = function (posX, posY) {
-		// draw rect 1
-		var rect1 = ctx;
-		rect1.fillStyle = 'white';
-		rect1.fillRect(0 + posX, 0 + posY, 10, 10);
-		// draw rect 2
-		var rect2 = ctx;
-		rect2.fillStyle = 'black';
-		rect2.fillRect(0 + posX, 10 + posY, 10, 10);
-		// draw rect 4
-		var rect3 = ctx;
-		rect3.fillStyle = 'white';
-		rect3.fillRect(10 + posX, 10 + posY, 10, 10);
-		// draw rect 3
-		var rect4 = ctx;
-		rect4.fillStyle = 'black';
-		rect4.fillRect(10 + posX, 0 + posY, 10, 10);
-	};
-	//draw checker board
-	for (var y = 0; y <= 480; y = y + 20) {
-		for (var x = 0; x < 640; x = x + 20) {
-			fourSq(x, y);
-		}
+//Ok wtf this function works
+/*
+function drawBackground(){
+	ctx.fillStyle = '#000'
+	ctx.fillRect(0,0,canvas.width,canvas.height);
+};
+*/
+//yet this one doesn't
+/*
+function drawBackground(){
+	ctx.rect(0,0,canvas.width,canvas.height);
+	ctx.fillStyle = '#FFF'
+	ctx.fill();
+};
+*/
+
+
+//set's up the player
+var player = {
+	x:0,
+	y:0,
+	vx: 5,
+	vy: 2,
+	size:10,
+	color:'blue',
+	draw : function(){
+		ctx.rect(this.x, this.y, this.size, this.size);
+		ctx.fillStyle = this.color;
+		ctx.fill();
 	}
 };
-
-//moves a square across the screen
-var cat = function () {
-	for (var i = 0; i < 640; i++) {
-	//draws a square
-	drawSquare(10, i, 10, 'white')
-	//there should be a delay in here or something
-	
-	//clear the square
-	ctx.clearRect(i, 10, 10, 10);
-	//replace the black background
-	drawSquare(10,i,10, 'black');
-	return true;
-	}
+function draw(){
+	ctx.clearRect(0,0,canvas.width,canvas.height);
+	ctx.fillRect(0, 0, 640, 480);
+	player.draw();
+	player.x += player.vx;
+	player.y += player.vy;
+	window.requestAnimationFrame(draw);
 };
-
-var help = function () {
-	console.log('this is a thingy about things');
-	console.log('fuckers are fuckers');
-
-};
+drawBackground();
+player.draw();
