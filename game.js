@@ -48,8 +48,7 @@ function draw(){
 	if (player.x + player.vx > canvas.width || player.x + player.vx < 0) {
   		player.vx = -player.vx;
 	}
-	//window.requestAnimationFrame(draw);
-	setTimeout()
+	window.requestAnimationFrame(draw);
 };
 
 draw();
