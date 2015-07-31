@@ -48,6 +48,9 @@ function draw(){
 	if (player.x + player.vx > canvas.width || player.x + player.vx < 0) {
   		player.vx = -player.vx;
 	}
+	if (player.x == 640 && player.y == 0){
+		player.color = 'blue';
+	}
 	window.requestAnimationFrame(draw);
 };
 
