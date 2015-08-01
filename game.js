@@ -5,7 +5,10 @@ var ctx = canvas.getContext("2d");
 
 //draws a black background
 //Ok wtf this function works
-
+function consoleJunk (){
+	console.log("Hello there. It seems you've stumbled upon the JavaScript console.");
+	console.log("This is awesome because if you type help() you can see a list of commands");
+}
 function drawBackground(){
 	ctx.fillStyle = '#000'
 	ctx.fillRect(0,0,canvas.width,canvas.height);
@@ -47,9 +50,6 @@ function draw(){
 	}
 	if (player.x + player.vx > canvas.width || player.x + player.vx < 0) {
   		player.vx = -player.vx;
-	}
-	if (player.x == 640 && player.y == 0){
-		player.color = 'blue';
 	}
 	window.requestAnimationFrame(draw);
 };
