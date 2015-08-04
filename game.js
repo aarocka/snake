@@ -10,9 +10,9 @@ function consoleJunk (){
 	console.log("This is awesome because if you type help() you can see a list of commands");
 }
 function drawBackground(){
-	ctx.fillStyle = '#000'
+	ctx.fillStyle = '#000';
 	ctx.fillRect(0,0,canvas.width,canvas.height);
-};
+}
 
 //yet this one doesn't
 /*
@@ -49,7 +49,7 @@ var player = {
 		player.x += player.vx;
 		player.y += player.vy;
 	}
-};
+}
 
 function draw(){
 	ctx.clearRect(0,0,canvas.width,canvas.height);
