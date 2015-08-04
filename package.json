@@ -17,6 +17,9 @@
     "bower": "^1.4.1",
     "gulp": "~3.5.1",
     "gulp-qunit": "~0.2.1",
-    "gulp-util": "~2.2.14"
+    "gulp-util": "~2.2.14",
+    "gulp-bower": "0.0.10"
   },
+  "dependencies": {
+  }
 }
