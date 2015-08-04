@@ -8,4 +8,4 @@ gulp.task('test', function(){
 gulp.task('bower', function(){
 	return bower()
 	.pipe(gulp.dest('bower_components/'));
-})
+});
