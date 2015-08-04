@@ -36,6 +36,18 @@ var player = {
 		ctx.rect(this.x, this.y, this.size, this.size);
 		ctx.fillStyle = this.color;
 		ctx.fill();
+	},
+	colision : function(){
+		if (player.y + player.vy > canvas.height || player.y + player.vy < 0) {
+  			player.vy = -player.vy;
+		}
+		if (player.x + player.vx > canvas.width || player.x + player.vx < 0) {
+  			player.vx = -player.vx;
+		}
+	},
+	move : function(){
+		player.x += player.vx;
+		player.y += player.vy;
 	}
 };
 
@@ -43,14 +55,8 @@ function draw(){
 	ctx.clearRect(0,0,canvas.width,canvas.height);
 	drawBackground();
 	player.draw();
-	player.x += player.vx;
-	player.y += player.vy;
-	if (player.y + player.vy > canvas.height || player.y + player.vy < 0) {
-  		player.vy = -player.vy;
-	}
-	if (player.x + player.vx > canvas.width || player.x + player.vx < 0) {
-  		player.vx = -player.vx;
-	}
+	player.move();
+	player.colision();
 	window.requestAnimationFrame(draw);
 };
 
