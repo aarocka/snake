@@ -60,25 +60,25 @@ function draw(){
 window.addEventListener('keydown', function(e){
 	//console.log(e.keyCode);
 	
-	if (e.keyCode == 83) {
+	if (e.keyCode === 83) {
 		console.log('player pressed s');
 		player.vx=0;
 		player.vy=5;
 		draw();
 	}
-	if (e.keyCode == 87) {
+	if (e.keyCode === 87) {
 		console.log('player pressed w');
 		player.vx = 0;
 		player.vy = -5;
 		draw();
 	}
-	if (e.keyCode == 65){
+	if (e.keyCode === 65){
 		console.log('player pressed a');
 		player.vx = -5;
 		player.vy = 0;
 		draw();
 	}
-	if (e.keyCode == 68) {
+	if (e.keyCode === 68) {
 		console.log('player pressed d');
 		player.vx = 5;
 		player.vy = 0;
@@ -86,19 +86,19 @@ window.addEventListener('keydown', function(e){
 	}
 });
 window.addEventListener('keyup', function(e){
-	if (e.keyCode == 83) {
+	if (e.keyCode === 83) {
 		player.vx = 0;
 		player.vy = 0;
 	}
-	if (e.keyCode == 87) {
+	if (e.keyCode === 87) {
 		player.vx = 0;
 		player.vy = 0;
 	}
-	if (e.keyCode == 65){
+	if (e.keyCode === 65){
 		player.vx = 0;
 		player.vy = 0;
 	}
-	if (e.keyCode == 68) {
+	if (e.keyCode === 68) {
 		player.vx = 0;
 		player.vy = 0;
 	}
