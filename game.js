@@ -34,7 +34,7 @@ var player = {
   			player.vx = -player.vx;
 		}
 	},
-	//This moves the player
+	//This is what actually moves the player according to the current velocity. This function is now depreciated and is scheduled for deletion i guess
 	move : function(){
 		player.x += player.vx;
 		player.y += player.vy;
@@ -115,7 +115,7 @@ function draw(){
 	window.requestAnimationFrame(draw);
 }
 
-/* char codes
+/* char codes for future refrence
 87 = w
 83 = s
 65 = a
