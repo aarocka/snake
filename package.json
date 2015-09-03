@@ -18,9 +18,10 @@
     "gulp": "^3.9.0",
     "gulp-qunit": "~1.2.1",
     "gulp-util": "^3.0.6",
-    "gulp-bower": "0.0.10"
+    "gulp-bower": "0.0.10",
+    "codecov.io": "^0.1.6"
   },
   "dependencies": {
-    "codecov.io": "^0.1.6"
+
   }
 }
