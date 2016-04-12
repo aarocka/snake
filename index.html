@@ -14,7 +14,64 @@
 		</style>
 	</head>
 	<body>
+		<h1 style="color:white;">It's still a WIP, but at least we got trails behind the player. It looks like an old Windows screen saver.</h1>
 		<canvas id="game" width="640" height="480"></canvas>
-		<script type="text/javascript" src="game.js"></script>
+		<script type="text/javascript">
+			var canvas = document.getElementById("game");
+			var ctx = canvas.getContext("2d");
+
+			//draws a black background
+
+			//draws a black background
+			//Ok wtf this function works
+
+			function drawBackground(){
+				ctx.fillStyle = '#2F2F2F'
+				ctx.fillRect(0,0,canvas.width,canvas.height);
+			};
+
+			//yet this one doesn't
+			/*
+			function drawBackground(){
+				ctx.rect(0,0,canvas.width,canvas.height);
+				ctx.fillStyle = '#2F2F2F'
+				ctx.fill();
+			};
+			*/
+			//JS Y U NO WORK!!!
+
+			//set's up the player
+			var player = {
+				x:0,
+				y:0,
+				vx: 10,
+				vy: 4,
+				size:10,
+				color:'white',
+				draw : function(){
+					ctx.rect(this.x, this.y, this.size, this.size);
+					ctx.fillStyle = this.color;
+					ctx.fill();
+				}
+			};
+
+			function draw(){
+				ctx.clearRect(0,0,canvas.width,canvas.height);
+				drawBackground();
+				player.draw();
+				player.x += player.vx;
+				player.y += player.vy;
+				if (player.y + player.vy > canvas.height || player.y + player.vy < 0) {
+			  		player.vy = -player.vy;
+				}
+				if (player.x + player.vx > canvas.width || player.x + player.vx < 0) {
+			  		player.vx = -player.vx;
+				}
+				raf = window.requestAnimationFrame(draw);
+			};
+			drawBackground();
+			player.draw();
+			draw();
+		</script>
 	</body>
 </html>
